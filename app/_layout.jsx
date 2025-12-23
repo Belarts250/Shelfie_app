@@ -1,6 +1,7 @@
 import { Slot, Stack } from 'expo-router'
 import { StyleSheet, Text, View , Image, useColorScheme} from 'react-native'
 import { Colors } from '../constants/Colors.js'
+import { StatusBar } from 'expo-status-bar'
 
 
 const RootLayout = () => { 
@@ -9,9 +10,10 @@ const RootLayout = () => {
     const theme = Colors[colorScheme] 
 
     return (
-      <View style ={{flex: 1}} >
+   <>
         {/* <Slot />  makes this component appear on all pages*/}
         {/* <Stack /> */}
+        <StatusBar value="auto" />
         <Stack screenOptions={{
             headerStyle : {
                 backgroundColor: theme.background},
@@ -22,8 +24,9 @@ const RootLayout = () => {
         </Stack>
 
         {/* <Text> Footer </Text>         */}
-      </View>
-    )
+        </>
+      
+      )
   }
 
 
